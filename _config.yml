@@ -1,0 +1,40 @@
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: "Rosja - Wspomeniaina z podróży do rodowych osad" # 52 chars
+title1: "Rosja"
+title2: "Wspomeniaina z podróży do rodowych osad"
+
+css:   "/css/strona.css"
+
+autor: "Radosław Daniluk"
+
+# uglified mailto pieces - little herder to be harvested by robots
+# email: "rad&#101;&#107;&#64;&#122;yw&#97;&#46;pl" #zywa.pl
+email: "rad&#101;&#107;&#64;&#103;mai&#108;&#46co&#109;;"
+mailto-kod: "&#109;ai&#108;to&#58;" #mailto:
+subject-kod: "&#63;&#115;&#117;bject&#61;" #?subject=
+n:   "<a class=\"ref\">\\*</a><span class=\"notka\">"
+
+description: > # this means to ignore newlines until "baseurl:"
+  Wspomnienia z podróży po osadach rodowych siedlisk Rosji. Zainspirowani książkami z serii Dzwoniące Cedry Rosji W. Megre, razem z Agatą postaowiliśmy zobaczyć jak wyglądają osady rosyjskich czytelników książki Anastazja.
+baseurl: "/rosja" # the subpath of your site, e.g. /blog
+url: "http://radek-daniluk.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown:   rdiscount
+host:    0.0.0.0
+
+defaults:
+ -
+  scope:
+    path: ""
+    type: "posts"
+  values:
+    layout: "ksiazka"
+
+exclude: [".*"]

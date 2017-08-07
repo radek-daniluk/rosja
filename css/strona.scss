@@ -1,0 +1,280 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+@font-face {
+    font-family: 'tyt';
+    src: url('/fonts/tyt.eot');
+    src: url('/fonts/tyt.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/tyt.woff') format('woff'),
+         url('/fonts/tyt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+//	Narrow Sans-Serif
+$sans-narrow:		"Liberation Sans", "Nimbus Sans L", "FreeSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//	Wide Sans-Serif
+$sans-wide:			"DejaVu Sans", "Bitstream Vera Sans", Geneva, Verdana, sans-serif;
+//	Narrow Serif
+$serif-narrow:		"Liberation Serif", "Nimbus Roman No 9 L",  "FreeSerif", "Hoefler Text", Times, "Times New Roman", serif;
+//	"Antique" Serif
+$serif-antique:		"TeX Gyre Pagella", "Bitstream Charter", "URW Palladio L", Palatino, "Palatino Linotype", "Book Antiqua", serif;
+//	Wide Serif
+$serif-wide:		"DejaVu Serif", "Bitstream Vera Serif", "Century Schoolbook L", "Lucida Bright", Georgia, serif;
+//	Monospace
+//$monospace:		"Liberation Mono", "Nimbus Mono L", "FreeMono", "DejaVu Mono", "Bitstream Vera Mono", "Lucida Console", "Andale Mono", "Courier New", monospace;
+
+$text-font-family:	Georgia, serif;
+$kolor-czerwony-polska:	#D4213D;
+$kolor-czerwony:			#D40000;
+$kolor-zloty:		#FFD700;
+$kolor-biel:		#FFF;
+
+// Width of the content area
+$text-width:		29em;
+
+// multiplicator1 - to adjust all font sizes at once
+$base-font-multi:	0.8; 
+
+$title-font-family:	tyt, $serif-antique;
+$title-font-size:	$base-font-multi;
+
+$text-font-multi:	1.3; // multiplicator for p font-size only
+$text-line-height:	1.3;
+$text-side-padding:	1em;
+
+// (width + padding) * base font-size * text font-size */
+$main-width: ($text-width + $text-side-padding);
+
+//header 2
+$h2-font-family:	$serif-antique;
+$h2-font-size-multi:1.5; //multiplicator for h2 font-size only
+$h2-font-weight:    normal;
+$h2-margin-top:		2em;
+$h2-margin-bottom:	1em;
+
+// css
+html, body {
+	margin:			0;
+	border:			0;
+	padding:		0;
+}
+
+//* {	border: 1px solid black; } // test and debugging only
+
+html {
+	font-size:		$base-font-multi * 100%; 
+	font-family:	$text-font-family;
+	font-kerning:	normal;
+}
+
+$wzor-img:			"/img/wzor-pion-opti.svg";
+$wzor-url:			url($wzor-img);
+
+$lewa-width:		14em;
+$wzor-width:		2.5em;
+$lewa-padding:		0.3em;
+$lewa-font-multi:	1.2;//$text-font-multi;
+
+#lewa {
+
+	position:		fixed;
+	width:			$lewa-width;
+	height:			100%;
+	left:			0;
+	top:			0;
+	padding:		0 ($wzor-width + $lewa-padding) 0 $lewa-padding;
+
+	overflow-y:		auto;
+
+	background-color:	$kolor-czerwony;
+	background-image:	$wzor-url, linear-gradient(to left,
+   										$kolor-biel,
+   										$kolor-biel $wzor-width,
+										$kolor-czerwony $wzor-width,
+										$kolor-czerwony);
+	background-repeat:	repeat-y;
+	background-position:right;
+	background-size: 	$wzor-width;
+}
+
+$wzor-height:		$wzor-width;
+$wzor90-url:		url("/img/wzor-poziom-opti.svg");
+
+#obwoluta {
+	padding:		2em//($wzor-height * $text-font-multi) + 2em
+					0
+					0//($wzor-height * $text-font-multi)
+   					($lewa-width + $wzor-width + 2 * $lewa-padding);
+
+	//background-image:	$wzor90-url, $wzor90-url;
+	//background-position:top, bottom;
+	//background-size:	$wzor-height;
+	//background-repeat:	repeat-x;
+}
+
+//////     Dekoracja odnośników    //// /////
+a {
+	text-decoration: none;
+}
+
+main a {
+	color:			$kolor-czerwony;
+}
+
+#lewa a, footer a {
+	color:			$kolor-biel;
+}
+
+a:hover {
+	background-color:	$kolor-czerwony;
+	color:				$kolor-zloty;
+	text-decoration:	underline;
+	//text-decoration-color: $kolor-biel;
+}
+
+a:active {
+	background-color:	$kolor-zloty;
+	color:				$kolor-czerwony;
+}
+
+/////////////////////////////////////////
+
+
+#nawigacja {
+	padding:			1em 3em;
+}
+
+footer {
+	margin:				4em 0 0 0;
+	padding:			2em;
+	background-color:	$kolor-czerwony;
+	//color:				$kolor-biel;
+}
+
+#tytul {
+	font-family:	$title-font-family;
+	//font-size:		2em;
+	color:			$kolor-czerwony;		
+	text-align:		center;
+}
+
+#nav {
+	font-size:		$lewa-font-multi * 1em;
+	padding-left:	1.6em;
+	//border-top:		2px solid $kolor-biel;
+}
+
+#nav li {
+	text-overflow:	ellipsis;
+}
+
+main p {
+	
+	width:			$text-width;
+	margin:			auto;
+	padding:		0 $text-side-padding/2;
+
+	font-size:		$text-font-multi * 1em; 
+	line-height:	$text-line-height;
+	text-indent:	1em;
+	text-align:		justify;
+}
+
+main hr {
+	margin-top:		2em;
+	border:			none;
+	text-align:		center;
+	font-size:		1em;
+	width:			50%; // only for border not none
+	height:			auto;
+}
+
+main hr::before {
+	content:		"***";
+}
+
+main h1, main h2 {
+	margin-top:		$h2-margin-top;
+	margin-bottom:	$h2-margin-bottom;
+
+	font-family:	$h2-font-family;
+	font-size:		$h2-font-size-multi * 1em;
+	font-weight:	$h2-font-weight;
+	text-align:		center;
+}
+
+main h1 {
+	font-size:		2em;
+}
+
+// + $text-side-padding
+
+$media-max-width:	( ($main-width) * $text-font-multi								+ ($lewa-width + $wzor-width + 2 * $lewa-padding) * $lewa-font-multi) 		    * $base-font-multi;
+
+@media (max-width:	$media-max-width) {
+
+	#lewa {
+		display:	none;
+	}
+
+	#obwoluta {
+		padding:	0;
+		width:		auto;
+		background-image: none;
+		text-align:	left;
+    }
+
+	main p {
+		width:		auto;
+		text-align: left;
+	}
+
+	
+}
+
+$notka-font-multi:	0.7;
+$notka-width:		12em;
+.notka {
+
+	width:			$notka-width;
+	padding:		0.5em;
+	text-align:		left;
+	float:			right;
+	
+	font-family:	$sans-narrow;
+	font-size:		$notka-font-multi * 1em;
+	text-indent:	0;
+
+	//background-color: #EEE;
+	border-left:			3px solid $kolor-czerwony;
+}
+
+a.ref:hover + span {
+	background-color:	#EEE;
+}
+
+$media-notka:		$notka-width * $notka-font-multi * $base-font-multi;
+$media-min-width:	$media-notka + $media-max-width;
+
+@media (min-width: $media-min-width) {
+	.notka {
+
+		//width:			$notka-width;
+		position:		absolute;
+		right:			0;
+		padding-right:	1em;
+
+		//text-align:		right;
+	}
+
+	main {
+		margin-right:	$media-notka;
+	}
+}
+
+@import "stopka"
+

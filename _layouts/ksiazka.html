@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+  {% include head.html %}
+
+  <body>
+
+    <div id="lewa">
+      {% include header.html %}
+	  <nav>
+        {% include spis-tresci.html %} 
+	  </nav>
+	</div>
+
+    <div id="obwoluta">
+      <main>
+        {{ content }}
+	    {% include nawigacja-dol.html %}
+      </main>
+	  {% include stopka.html %}
+    </div>
+
+  </body>
+
+</html>

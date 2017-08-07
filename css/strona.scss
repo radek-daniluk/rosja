@@ -1,14 +1,17 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
+fontdir: "/fonts/"
+imgdir:	"/img/"
 ---
 @charset "utf-8";
 
+{% assign font_path = page.fontdir | prepend: site.baseurl | prepend: site.url %}
 @font-face {
     font-family: 'tyt';
-    src: url('/fonts/tyt.eot');
-    src: url('/fonts/tyt.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/tyt.woff') format('woff'),
-         url('/fonts/tyt.ttf') format('truetype');
+    src: url('{{ 'tyt.eot' | prepend: font_path }}');
+    src: url('{{ 'tyt.eot?#iefix' | prepend: font_path }}') format('embedded-opentype'),
+         url('{{ 'tyt.woff' | prepend: font_path }}') format('woff'),
+         url('{{ 'tyt.ttf' | prepend: font_path }}') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -71,7 +74,8 @@ html {
 	font-kerning:	normal;
 }
 
-$wzor-img:			"/img/wzor-pion-opti.svg";
+{% assign img_path = page.imgdir | prepend: site.baseurl | prepend: site.url %}
+$wzor-img:			"{{ "wzor-pion-opti.svg" | prepend: img_path }}";
 $wzor-url:			url($wzor-img);
 
 $lewa-width:		14em;
@@ -102,7 +106,7 @@ $lewa-font-multi:	1.2;//$text-font-multi;
 }
 
 $wzor-height:		$wzor-width;
-$wzor90-url:		url("/img/wzor-poziom-opti.svg");
+$wzor90-url:		url("{{ "wzor-poziom-opti.svg" | prepend: img_path }}");
 
 #obwoluta {
 	padding:		2em//($wzor-height * $text-font-multi) + 2em

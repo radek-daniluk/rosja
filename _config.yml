@@ -9,7 +9,10 @@ title: "Rosja - Wspomeniaina z podróży do rodowych osad" # 52 chars
 title1: "Rosja"
 title2: "Wspomeniaina z podróży do rodowych osad"
 
-css:   "/css/strona.css"
+css:	"/css/strona.css"
+# my pages
+podziekowania:	"/podziekowania/"
+technicznie:	"/technicznie/"
 
 autor: "Radosław Daniluk"
 
@@ -23,16 +26,17 @@ n:   "<a class=\"ref\">\\*</a><span class=\"notka\">"
 description: > # this means to ignore newlines until "baseurl:"
   Wspomnienia z podróży po osadach rodowych siedlisk Rosji. Zainspirowani książkami z serii Dzwoniące Cedry Rosji W. Megre, razem z Agatą postaowiliśmy zobaczyć jak wyglądają osady rosyjskich czytelników książki Anastazja.
 baseurl: "/rosja" # the subpath of your site, e.g. /blog
-url: "http://radek-daniluk.github.io" # the base hostname & protocol for your site
+url: "https://radek-daniluk.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown:   rdiscount
 host:    0.0.0.0
 
+permalink: pretty
+
 defaults:
  -
   scope:
-    path: ""
     type: "posts"
   values:
     layout: "ksiazka"

@@ -1,5 +1,5 @@
 <ol id="nav">Spis treści
 	{% for post in site.posts %}
-		<li><a href="{{ post.url }}">{{ post.title | clean }}</a></li>
+		<li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | clean }}</a></li>
 	{% endfor %}
 </ol>

@@ -1,6 +1,6 @@
 <nav id="nawigacja">
 
-	<a href="{{ page.previous.url }}">{{ page.previous.title }} </a>
-	<a style="float: right" href="{{ page.next.url }}">{{ page.next.title }} </a>
+	<a href="{{ page.previous.url | prepend: site.baseurl }}">{{ page.previous.title }} </a>
+	<a style="float: right" href="{{ page.next.url | prepend: site.baseurl }}">{{ page.next.title }} </a>
 
 </nav>

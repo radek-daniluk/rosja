@@ -5,7 +5,7 @@ imgdir:	"/img/"
 ---
 @charset "utf-8";
 
-{% assign font_path = page.fontdir | prepend: site.baseurl | prepend: site.url %}
+{% assign font_path = page.fontdir | prepend: site.baseurl %}
 @font-face {
     font-family: 'tyt';
     src: url('{{ 'tyt.eot' | prepend: font_path }}');
